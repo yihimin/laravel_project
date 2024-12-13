@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>판매관리</title>
+	<link   href="my/css/bootstrap.min.css" rel="stylesheet">
+	<link   href="my/css/my.css" rel="stylesheet">
+	<script src="my/js/jquery-3.7.1.min.js"></script>
+	<script src="my/js/bootstrap.bunddle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">판매관리</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" href="#">매입</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">매출</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">기간조회</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">통계</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">BEST제품</a></li>
+							<li><a class="dropdown-item" href="#">월별제품별현황</a></li>
+							<li><a class="dropdown-item" href="#">종류별 분포도</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">기초정보</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">구분</a></li>
+							<li><a class="dropdown-item" href="#">제품</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="#">사용자</a></li>
+						</ul>
+					</li>
+				</ul>
+				<a class="btn btn-sm btn-outline-secondary btn-dark" href="#">로그인</a>
+			</div>
+		</div>
+	</nav>
+<!-------------------------------------------------------------->
+<!-- 시작 : Content                                                                  -->
+<!-------------------------------------------------------------->
+	<br>
+	<div class="alert mycolor1" role="alert">사용자</div>
+
+	<script>
+		function find_text()
+		{
+			form1.action="#";
+			form1.submit();
+		}
+	</script>
+
+	<form name="form1" action="">
+	<div class="row">
+		<div class="col-3" align="left">
+			<div class="input-group input-group-sm">
+				<span class="input-group-text">이름</span>
+				<input type="text" name="text1" value="" class="form-control" 
+					onKeydown="if (event.keyCode == 13) { find_text(); }"> 
+				<button class="btn mycolor1" type="button" onClick="find_text();">검색</button>
+			</div>
+		</div>
+		<div class="col-9" align="right">
+			<a href="#" class="btn btn-sm mycolor1">추가</a>
+		</div>
+	</div>
+	</form>
+
+	<table class="table table-sm table-bordered table-hover mymargin5">
+		<tr class="mycolor2">
+			<td width="10%">번호</td>
+			<td width="20%">아이디</td>
+			<td width="20%">암호</td>
+			<td width="20%">이름</td>
+			<td width="20%">전화</td>
+			<td width="10%">등급</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>admin</td>
+			<td>1234</td>
+			<td>관리자</td>
+			<td>010-1111-1111</td>
+			<td>관리자</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>id1</td>
+			<td>1234</td>
+			<td>홍길동</td>
+			<td>010-2222-2222</td>
+			<td>직원</td>
+		</tr>
+	</table>
+
+	<nav aria-label="Page navigation example">
+		<ul class="pagination pagination-sm justify-content-center mymargin5">
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Previous">
+					<span aria-hidden="true">◁</span>
+				</a>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">1</a></li>
+			<li class="page-item active" aria-current="page">
+				<span class="page-link mycolor1">2</span>
+			</li>
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+			<li class="page-item"><a class="page-link" href="#">4</a></li>
+			<li class="page-item"><a class="page-link" href="#">5</a></li>
+			<li class="page-item">
+				<a class="page-link" href="#" aria-label="Next">
+					<span aria-hidden="true">▷</span>
+				</a>
+			</li>
+		</ul>
+	</nav>
+<!-------------------------------------------------------------->
+<!-- 끝 : Content                                                                     -->
+<!-------------------------------------------------------------->
+</div>
+
+</body>
+</html>
+

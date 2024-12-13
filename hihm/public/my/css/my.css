@@ -1,0 +1,183 @@
+/* === 색상 테마 설정 === */
+:root {
+	--olive-bg: #a3b18a;
+	--light-olive-bg: #c3d4b1;
+	--yellow-bg: #fff9e6;
+	--dark-olive-text: #422f04;
+	--olive-text: #556b2f;
+	--light-olive: #8f9779;
+	--ivory-text: #fff8e7;
+	--highlight-yellow: #f0e68c;
+	--modal-bg-light: #f6f8e0;
+	--modal-footer-bg: #d2e0c4;
+  }
+  
+  /* === 전체 및 기본 설정 === */
+  body {
+	background-color: #f1f4e9;
+	color: var(--olive-text);
+  }
+  
+  a {
+	color: #6b8f59;
+	text-decoration: none;
+  }
+  
+  a:hover {
+	color: #3e5234;
+  }
+  
+  /* === 네비게이션 바 스타일 === */
+  .navbar {
+	background-color: var(--olive-bg) !important;
+  }
+  
+  .navbar .navbar-brand,
+  .navbar .nav-link {
+	color: var(--ivory-text) !important;
+  }
+  
+  .navbar .nav-link:hover {
+	color: var(--dark-olive-text) !important;
+  }
+  
+  /* === 버튼 스타일 === */
+  .btn-outline-secondary {
+	color: var(--ivory-text);
+	background-color: var(--light-olive);
+	border-color: var(--light-olive);
+	transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .btn-outline-secondary:hover {
+	color: var(--dark-olive-text);
+	background-color: var(--ivory-text);
+	border-color: var(--ivory-text);
+  }
+  
+  .btn.mycolor1 {
+	background-color: var(--light-olive) !important;
+	color: var(--ivory-text) !important;
+	border: none;
+  }
+  
+  .btn.mycolor1:hover {
+	background-color: var(--olive-text) !important;
+	color: #fff !important;
+  }
+  
+  /* === 테이블 스타일 === */
+  table {
+	font-size: 10pt;
+	text-align: center;
+	vertical-align: middle !important;
+  }
+  
+  .table-hover tbody tr:hover {
+	background-color: var(--highlight-yellow) !important;
+  }
+  
+  table.table-borderless td {
+	color: var(--olive-text);
+  }
+  
+  .mymargin5 {
+	margin: 5px 0;
+  }
+  
+  .mycolor1 {
+	background-color: var(--olive-bg) !important;
+	color: var(--ivory-text) !important;
+  }
+  
+  .mycolor2 {
+	background-color: var(--yellow-bg) !important;
+	color: var(--olive-text) !important;
+  }
+  
+  /* === 드롭다운 메뉴 스타일 === */
+  .dropdown-menu {
+	background-color: var(--yellow-bg);
+	border: none;
+  }
+  
+  .dropdown-menu .dropdown-item {
+	color: var(--olive-text);
+	background-color: var(--yellow-bg);
+	transition: font-size 0.2s ease;
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+	color: var(--dark-olive-text);
+	font-size: 18px;
+  }
+  
+  /* === 모달창 스타일 === */
+  .modal-header.mycolor1 {
+	background-color: var(--light-olive-bg);
+	color: var(--olive-text);
+  }
+  
+  .modal-body.bg-light {
+	background-color: var(--modal-bg-light);
+  }
+  
+  .modal-footer.alert-secondary {
+	background-color: var(--modal-footer-bg);
+  }
+  
+  /* === 캐러셀 이미지 및 컨트롤 스타일 === */
+  .carousel-inner img {
+	height: 400px;
+	object-fit: cover;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+	background-color: var(--light-olive);
+	border-radius: 50%;
+  }
+  
+  /* === 썸네일 및 기타 스타일 === */
+  .mythumb_box {
+	font-size: 14px;
+	text-align: center;
+	border: 1px solid lightgray;
+	padding: 3px;
+	margin: 5px 0;
+  }
+  
+  .mythumb_image {
+	height: 150px;
+	max-width: 100%;
+	margin-bottom: 3px;
+  }
+  
+  .mythumb_text {
+	border: 1px solid lightgray;
+	background-color: var(--yellow-bg);
+	padding: 3px;
+  }
+  
+  .mythumb_bigimage {
+	height: 550px;
+	max-width: 100%;
+	margin-bottom: 3px;
+  }
+  
+  .mynopic {
+	background-color: #eeeeee;
+	width: 98%;
+	height: 140px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
+	margin: 3px;
+  }
+  
+/* 선택된 페이지네이션 버튼의 보더 제거 */
+.page-item.active .page-link,
+.page-link:hover {
+  border: none; /* 보더 제거 */
+  outline: none; /* 포커스 아웃라인 제거 */
+  box-shadow: none; /* 그림자 제거 */
+}

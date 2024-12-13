@@ -1,0 +1,207 @@
+<!---------------------------------------------------------------------------------------------
+	제목 : Laravel Framework 실무 (개별프로젝트 실습용 디자인 HTML)
+
+	소속 : 인덕대학교 컴퓨터소프트웨어학과
+	이름 : 교수 윤형태 (2023.10.30)
+---------------------------------------------------------------------------------------------->
+<!doctype html>
+<html lang="kr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>INDUKProduct Information</title>
+	<link  href="my/css/bootstrap.min.css" rel="stylesheet">
+	<link  href="my/css/my.css" rel="stylesheet">
+	<script src="my/js/jquery-3.6.0.min.js"></script>
+	<script src="my/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+<!-------------------------------------------------------------------------------------------->	
+<!--  Title과  상단메뉴(홈/로그인) -->
+<div class="row">
+	<div class="col fs-3" align="left">
+		&nbsp;<a href="index.html"><font color="#777777">INDUK Product Information</font></a>
+	</div>
+	<div class="col" align="right">
+		<table class="mt-3" style="font-size:12px;">
+			<tr height="30">
+				<td><a href="index.html">Home</a>&nbsp; | &nbsp;</td>
+				<td><a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</a>&nbsp;&nbsp;</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+<!-- Main Image -->
+<div class="row">
+	<div class="col">
+		<img src="my/images/main1.jpg" width="100%" height="250">
+	</div>
+</div>
+
+<!--  Category 메뉴 -->
+<div class="row bg-light m-0 p-1 fs-6 border">
+	<div class="col">
+		<div class="d-flex">
+			<ul class="nav me-auto">
+				<li class="nav-item zoom_a"><a class="nav-link" href="menu.html?menu=1"> All Item </a></li>
+				<li class="nav-item zoom_a"><a class="nav-link" href="menu.html?menu=2"> Menu1 </a></li>
+				<li class="nav-item zoom_a"><a class="nav-link" href="menu.html?menu=3"> Menu2 </a></li>
+				<li class="nav-item zoom_a"><a class="nav-link" href="menu.html?menu=4"> Menu3 </a></li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"> <font color="blue">Admin</font> </a>
+					<ul class="dropdown-menu">
+						<li class="nav-item"><a class="dropdown-item" href="admin_product.html">제품</a></li>
+					</ul>
+				</li>
+			</ul>
+
+			<!--  제품검색은 menu=0 으로 처리 -->
+			<form name="form1" method="post" action="menu.html?menu=0">
+				<div class="input-group input-group-sm pt-1" >
+					<span  class="input-group-text" style="font-size:13px;">검색</span>
+					<input type="text" name="find_text" size="10" class="form-control form-control-sm">
+					<button type="button" class="btn btn-sm btn-outline-secondary" style="font-size:13px;" onClick="form1.submit();">Search</button>
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>
+
+<!-------------------------------------------------------------------------------------------->	
+<!-- 시작 : 다른 웹페이지 삽입할 부분 -->
+<!-------------------------------------------------------------------------------------------->	
+
+<!--  제품 사진/정보(제품명,가격,옵션)  -->
+<div class="row m-5 mb-4">
+	<div class="col" align="center">
+
+		<table width="100%">
+			<tr>
+				<td width="30%">
+					<img src="product/p1.png" class="img-thumbnail" width="100%" style="cursor:zoom-in" data-bs-toggle="modal" data-bs-target="#zoomModal">
+				</td>
+				<td  width="70%" align="center" valign="top" class="px-4">
+					<table width="97%" height="100%" style="font-size:15px; text-align:left; color:#777777;">
+						<tr height="50">
+							<td colspan="2" style="font-size:20px;color:#222222; padding-left:15px;">
+								제품명1
+							</td>
+						</tr>
+						<tr><td colspan="2"><hr class="my-2 mx-2"></td></tr>
+						<tr height="35" style="vertical-align:top;">
+							<td width="30%" style="padding-left:25px;color:#111111">정보1</td>
+							<td width="70%">정보내용1</td>
+						</tr>
+						<tr height="35" style="vertical-align:top">
+							<td width="30%" style="padding-left:25px;color:#111111">정보2</td>
+							<td width="70%">정보내용2</td>
+						</tr>
+						<tr height="35" style="vertical-align:top">
+							<td width="30%" style="padding-left:25px;color:#111111">...</td>
+							<td width="70%">...</td>
+						</tr>
+
+						<tr>
+							<td colspan="2" height="60" align="center">
+								<a href="javascript:history.back()" class="btn btn-sm btn-outline-secondary">돌아가기</a>
+							</td>
+						</tr>
+					</table>
+
+				</td>
+			</tr>
+		</table>
+
+	</div>
+</div>
+
+<br><br><br><br>
+
+<!-- Zoom Modal 이미지 -->
+<div class="modal fade" id="zoomModal" tabindex="-1" aria-labelledby="zoomModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header bg-light">
+        <h5 class="modal-title" id="zoomModalLabel">제품명1</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img src="product/p1.png" class="img-thumbnail" width="100%" style="cursor:pointer" class="btn-close"  data-bs-dismiss="modal" aria-label="Close">
+      </div>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<!-------------------------------------------------------------------------------------------->	
+<!-- 끝 : 다른 웹페이지 삽입할 부분 -->
+<!-------------------------------------------------------------------------------------------->	
+
+<!-- 화면 하단 (main_bottom) : 회사소개 -->
+<hr class="m-0">
+<div class="row bg-light py-3  m-0 mb-5">
+	<div class="col-2" align="center">
+		<a href="index.html"><img src="my/images/footer_logo.png" width="120"></a>
+	</div>
+	<div class="col-10 pt-2" align="left" style="line-height:15px;">
+
+		<h6>INDUK Product Information</h6>
+		<font style="font-size:12px;">
+			상호: 인덕주식회사 | 대표 : 홍길동 | 사업자 등록번호 : 123-12-123345<br>
+			주소 : 21424 서울 노원구 초안산로 인덕대학교  | 전화 : 010-1111-2222 | Fax : 02-3333-4444<br>
+			<br>
+			Copyright © 2022 www.induk.ac.kr &nbsp; All Rights Reserved.
+		</font>
+	</div>
+</div>
+<br>
+
+<!-------------------------------------------------------------------------------------------->	
+</div>
+
+</body>
+</html>
+
+<!-- Login Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm modal-dialog-centered">
+		<div class="modal-content">
+
+			<div class="modal-header mycolor1">
+				<h5 class="modal-title" id="exampleModalLabel">로그인</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body bg-light">
+			
+				<form name="form_login" method="post" action="login_check.html">
+				
+					<table class="table table-borderless my-2">
+						<tr>
+							<td width="30%"><h6>아이디</h6></td>
+							<td width="70%"><input type="text" name="uid" class="form-control form-control-sm"></td>
+						</tr>
+						<tr>
+							<td><h6>암&nbsp;호</h6></td>
+							<td><input type="password" name="pwd" class="form-control  form-control-sm"></td>
+						</tr>
+					</table>
+				
+				</form>
+				
+			</div>
+
+			<div class="modal-footer alert-secondary">
+				<button type="button" class="btn btn-sm btn-secondary" 
+					onclick="javascript:form_login.submit();">확인</button>
+				<button type="button" class="btn btn-sm btn-light" data-bs-dismiss="modal">닫기</button>
+			</div>
+
+		</div>
+	</div>
+</div>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="kr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>판매관리</title>
+	<link   href="my/css/bootstrap.min.css" rel="stylesheet">
+	<link   href="my/css/my.css" rel="stylesheet">
+	<script src="my/js/jquery-3.7.1.min.js"></script>
+	<script src="my/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">판매관리</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+				data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link" href="#">매입</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">매출</a></li>
+					<li class="nav-item"><a class="nav-link" href="#">기간조회</a></li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">통계</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">BEST제품</a></li>
+							<li><a class="dropdown-item" href="#">월별제품별현황</a></li>
+							<li><a class="dropdown-item" href="#">종류별 분포도</a></li>
+						</ul>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" 
+							role="button" data-bs-toggle="dropdown" aria-expanded="false">기초정보</a>
+						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<li><a class="dropdown-item" href="#">구분</a></li>
+							<li><a class="dropdown-item" href="#">제품</a></li>
+							<li><hr class="dropdown-divider"></li>
+							<li><a class="dropdown-item" href="#">사용자</a></li>
+						</ul>
+					</li>
+				</ul>
+				<a class="btn btn-sm btn-outline-secondary btn-dark" href="#">로그인</a>
+			</div>
+		</div>
+	</nav>
+<!-------------------------------------------------------------->
+<!-- 시작 : Content                                                                  -->
+<!-------------------------------------------------------------->
+	<br>
+	<div class="alert mycolor1" role="alert">사용자</div>
+
+	<form name="form1" method="post" action="">
+
+	<table class="table table-sm table-bordered mymargin5">
+		<tr>
+			<td width="20%" class="mycolor2">번호</td>
+			<td width="80%" align="left">1</td>
+		</tr>
+		<tr>
+			<td width="20%" class="mycolor2"><font color="red">*</font> 이름</td>
+			<td width="80%" align="left">
+				<div class="d-inline-flex">
+					<input type="text" name="name" size="20" maxlength="20" value="홍길동" class="form-control form-control-sm">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="mycolor2"><font color="red">*</font> 아이디</td>
+			<td width="80%" align="left">
+				<div class="d-inline-flex">
+					<input type="text" name="uid" size="20" maxlength="20" value="admin" class="form-control form-control-sm">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="mycolor2"><font color="red">*</font> 암호</td>
+			<td width="80%" align="left">
+				<div class="d-inline-flex">
+					<input type="text" name="pwd" size="20" maxlength="20" value="1234" class="form-control form-control-sm">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="mycolor2">전화</div></td>
+			<td width="80%" align="left">
+				<div class="d-inline-flex">
+					<input type="text" name="tel1" size="3" maxlength="3" value="010" class="form-control form-control-sm">-
+					<input type="text" name="tel2" size="4" maxlength="4" value="1111" class="form-control form-control-sm">-
+					<input type="text" name="tel3" size="4" maxlength="4" value="1111" class="form-control form-control-sm">
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<td width="20%" class="mycolor2">등급</td>
+			<td width="80%" align="left">
+				<div class="d-inline-flex">
+					<input type="radio" name="rank" value="0" checked>&nbsp;직원&nbsp;&nbsp;
+					<input type="radio" name="rank" value="1">&nbsp;관리자
+				</div>
+			</td>
+		</tr>
+	</table>
+
+	<div align="center">
+		<a href="#" class="btn btn-sm mycolor1">수정</a>
+		<a href="#" class="btn btn-sm mycolor1" onClick="return confirm('삭제할까요 ?');" >삭제</a> &nbsp;
+		<input type="submit" value="저장" class="btn btn-sm mycolor1">&nbsp;
+		<input type="button" value="이전화면" class="btn btn-sm mycolor1" onClick="history.back();">
+	</div>
+
+	</form>
+<!-------------------------------------------------------------->
+<!-- 끝 : Content                                                                     -->
+<!-------------------------------------------------------------->
+</div>
+
+</body>
+</html>
+
