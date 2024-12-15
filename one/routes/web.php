@@ -20,15 +20,13 @@ Route::prefix('cart')->name('cart.')->group(function () {
     Route::get('/', [CartController::class, 'index'])->name('index'); // 장바구니 페이지
     Route::post('/', [CartController::class, 'store'])->name('store'); // 장바구니에 추가
     Route::delete('/{id}', [CartController::class, 'remove'])->name('remove'); // 장바구니 항목 삭제
-    Route::post('/checkout', [CartController::class, 'checkout'])->middleware('auth')->name('checkout'); // 구매
+    Route::post('/checkout', [CartController::class, 'checkout'])->name('checkout'); // 구매
 });
 
 // 로그인 및 로그아웃
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login.get');
+Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
-Route::get('/login', function () {
-    return view('auth.login'); // 로그인 페이지를 반환
-})->name('login');
 
 Route::get('/admin', [AdminController::class, 'index'])->middleware('session_auth');
 

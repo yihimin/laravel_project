@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producti;
+use App\Models\Order;
+use App\Models\OrderItem;
 
 class CartController extends Controller
 {
@@ -63,25 +65,30 @@ class CartController extends Controller
 
     public function checkout(Request $request)
     {
+        // 세션에서 로그인 여부 확인
+        if (!$request->session()->has('user_id')) {
+            return redirect()->route('login.get')->with('error', '구매를 진행하려면 로그인이 필요합니다.');
+        }
+
         // 세션에서 장바구니 데이터 가져오기
         $cart = session()->get('cart', []);
-    
+
         if (empty($cart)) {
             return redirect()->route('cart.index')->with('error', '장바구니가 비어 있습니다.');
         }
-    
+
         // 총 금액 계산
         $totalPrice = array_reduce($cart, function ($sum, $item) {
             return $sum + ($item['price'] * $item['quantity']);
         }, 0);
-    
+
         try {
             // 주문 생성
             $order = Order::create([
-                'user_id' => auth()->id(),
+                'user_id' => $request->session()->get('user_id'), // 세션에서 사용자 ID 가져오기
                 'total_price' => $totalPrice,
             ]);
-    
+
             // 주문 항목 생성
             foreach ($cart as $item) {
                 OrderItem::create([
@@ -91,14 +98,13 @@ class CartController extends Controller
                     'price' => $item['price'],
                 ]);
             }
-    
+
             // 세션에서 장바구니 비우기
             session()->forget('cart');
-    
-            return redirect()->route('cart.index')->with('success', '구매가 완료되었습니다.');
+
+            return redirect()->route('cart.success')->with('success', '구매가 완료되었습니다.');
         } catch (\Exception $e) {
             return redirect()->route('cart.index')->with('error', '구매 처리 중 문제가 발생했습니다.');
         }
-    }    
-
+    }
 }

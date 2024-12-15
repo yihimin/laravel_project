@@ -49,6 +49,9 @@
         <div class="mt-3">
             <form action="{{ route('cart.checkout') }}" method="POST">
                 @csrf
+                <button type="submit" class="btn btn-success w-100">
+                    구매하기
+                </button>
             </form>
         </div>
         @else

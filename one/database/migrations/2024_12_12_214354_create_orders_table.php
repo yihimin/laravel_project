@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable(); // 로그인하지 않은 사용자도 구매 가능
-            $table->decimal('total_price', 10, 2); // 총 금액
+            $table->unsignedBigInteger('user_id');
+            $table->decimal('total_price', 10, 2);
             $table->timestamps();
+    
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
-    }    
+    }        
 
     /**
      * Reverse the migrations.

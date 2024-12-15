@@ -6,6 +6,17 @@ use App\Models\User;
 
 class AuthController extends Controller
 {
+    /**
+     * 로그인 페이지 표시
+     */
+    public function showLoginForm()
+    {
+        return view('auth.login'); // 로그인 뷰 파일 경로
+    }
+
+    /**
+     * 로그인 처리
+     */
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -29,6 +40,9 @@ class AuthController extends Controller
         return back()->withErrors(['name' => '아이디 또는 비밀번호가 올바르지 않습니다.']);
     }
 
+    /**
+     * 로그아웃 처리
+     */
     public function logout(Request $request)
     {
         // 세션 초기화

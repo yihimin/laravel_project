@@ -8,7 +8,7 @@
             {{ session('error') }}
         </div>
     @endif
-    <form action="{{ route('login') }}" method="POST">
+    <form action="{{ route('login.post') }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label" style="color: #8B5E3C; font-weight: bold;">아이디</label>
