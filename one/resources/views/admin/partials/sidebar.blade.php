@@ -5,12 +5,11 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-coffee"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">home</div>
     </a>
 
 
     <!-- Heading -->
-    <div class="sidebar-heading">메뉴</div>
+    <div class="sidebar-heading">관리자 메뉴</div>
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">

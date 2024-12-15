@@ -19,8 +19,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
     ];
-
+    
     /**
      * 사용자 이름으로 인증
      *

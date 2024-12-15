@@ -6,6 +6,8 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProductiController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ProductsController;
 
 // 메인 페이지
 Route::get('/', [ProductiController::class, 'index'])->name('home');
@@ -37,20 +39,24 @@ Route::prefix('admin')->name('admin.')->group(function () {
     Route::get('/stats', [AdminController::class, 'stats'])->name('stats');
 });
 
-Route::prefix('admin/users')->name('admin.users.')->group(function () {
-    Route::get('/', [AdminController::class, 'users'])->name('index'); // 사용자 목록
-    Route::get('/create', [AdminController::class, 'create'])->name('create'); // 사용자 추가 폼
-    Route::post('/store', [AdminController::class, 'store'])->name('store'); // 사용자 저장
-    Route::get('/{id}/edit', [AdminController::class, 'edit'])->name('edit'); // 사용자 수정 폼
-    Route::put('/{id}', [AdminController::class, 'update'])->name('update'); // 사용자 업데이트
-    Route::delete('/{id}', [AdminController::class, 'destroy'])->name('destroy'); // 사용자 삭제
+// 사용자 라우트
+Route::prefix('admin/users')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('admin.users.index');     // 사용자 목록
+    Route::get('/create', [UserController::class, 'create'])->name('admin.users.create'); // 사용자 추가 폼
+    Route::post('/', [UserController::class, 'store'])->name('admin.users.store');       // 사용자 저장
+    Route::get('/{id}/edit', [UserController::class, 'edit'])->name('admin.users.edit'); // 사용자 수정 폼
+    Route::put('/{id}', [UserController::class, 'update'])->name('admin.users.update');  // 사용자 수정 저장
+    Route::delete('/{id}', [UserController::class, 'destroy'])->name('admin.users.destroy'); // 사용자 삭제
 });
 
+// 제품 관리
 Route::prefix('admin/products')->name('admin.products.')->group(function () {
-    Route::get('/', [AdminController::class, 'products'])->name('index');
-    Route::get('/{id}/edit', [AdminController::class, 'editProduct'])->name('edit');
-    Route::put('/{id}', [AdminController::class, 'updateProduct'])->name('update');
-    Route::delete('/{id}', [AdminController::class, 'destroyProduct'])->name('destroy');
+    Route::get('/', [ProductsController::class, 'index'])->name('index');
+    Route::get('/create', [ProductsController::class, 'create'])->name('create');
+    Route::post('/', [ProductsController::class, 'store'])->name('store');
+    Route::get('/{id}/edit', [ProductsController::class, 'edit'])->name('edit');
+    Route::put('/{id}', [ProductsController::class, 'update'])->name('update');
+    Route::delete('/{id}', [ProductsController::class, 'destroy'])->name('destroy');
 });
 
 Route::prefix('admin/stats')->name('admin.stats.')->group(function () {
